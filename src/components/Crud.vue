@@ -91,13 +91,13 @@ export default {
         this.list = this.listCopia.filter(item => {
           return (
             item.NumeroProcesso.toString().includes(this.filtro) ||
-            item.Assunto?.toLowerCase().includes(this.filtro.toLowerCase()) ||
-            item.Cliente?.Nome?.toLowerCase().includes(this.filtro.toLowerCase()) ||
-            item.Responsavel?.Nome?.toLowerCase().includes(this.filtro.toLowerCase()) ||
-            item.Fase?.Nome?.toLowerCase().includes(this.filtro.toLowerCase()) ||
-            item.Tipo?.Nome?.toLowerCase().includes(this.filtro.toLowerCase()) ||
-            item.Orgao?.Nome?.toLowerCase().includes(this.filtro.toLowerCase()) ||
-            item.Cliente?.Servidor?.toLowerCase().includes(this.filtro.toLowerCase())
+            item.NumeroCadastroEmpresa?.toLowerCase().includes(this.filtro.toLowerCase()) ||
+            item.NUP?.toLowerCase().includes(this.filtro.toLowerCase()) ||
+            item.TipoRequerimento?.toLowerCase().includes(this.filtro.toLowerCase()) ||
+            item.Superintendencia?.toLowerCase().includes(this.filtro.toLowerCase()) ||
+            item.UF?.toLowerCase().includes(this.filtro.toLowerCase()) ||
+            item.UnidadeProtocolizadora?.toLowerCase().includes(this.filtro.toLowerCase()) ||
+            item.Fase?.Nome.toLowerCase().includes(this.filtro.toLowerCase())
           )
         })
       } else {

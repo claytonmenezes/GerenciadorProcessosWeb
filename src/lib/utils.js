@@ -1,8 +1,9 @@
 import { date } from 'quasar'
+import axios from 'axios'
 
 export default {
   formataData (val) {
-    return date.formatDate(val, 'DD/MM/YYYY HH:mm:ss')
+    return date.formatDate(val, 'DD/MM/YYYY')
   },
   copyArray (array) {
     const copy = []
@@ -31,5 +32,11 @@ export default {
       }
     }
     return copy
+  },
+  async Ufs () {
+    return await axios({
+      url: 'https://servicodados.ibge.gov.br/api/v1/localidades/estados',
+      method: 'get'
+    }).then(response => { return response.data })
   }
 }

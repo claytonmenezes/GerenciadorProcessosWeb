@@ -8,7 +8,11 @@
         <template #body="props">
           <q-tr :props="props" style="cursor: pointer" @click.native="irParaEditar(props.row.Id)">
             <q-td key="NumeroProcesso" :props="props">{{ props.row.NumeroProcesso }}</q-td>
-            <q-td align="right" key="Excluir"> <q-icon class="q-pr-xl" @click.stop="excluir(props.row.Id)" color="red" name="delete"/> </q-td>
+            <q-td key="NUP" :props="props">{{ props.row.NUP }}</q-td>
+            <q-td key="Fase" :props="props">{{ props.row.Fase.Nome }}</q-td>
+            <q-td key="Ativo" :props="props"><q-checkbox v-model="props.row.Ativo" disable/></q-td>
+            <q-td key="TipoRequerimento" :props="props">{{ props.row.TipoRequerimento }}</q-td>
+            <q-td align="right" key="Excluir"> <q-icon class="q-pr-xl" size="sm" @click.stop="excluir(props.row.Id)" color="red" name="delete"/> </q-td>
           </q-tr>
         </template>
       </q-table>
@@ -25,6 +29,10 @@ export default {
       name: 'Processo',
       columns: [
         { name: 'NumeroProcesso', label: 'Numero do Processo', field: 'NumeroProcesso', align: 'left' },
+        { name: 'NUP', label: 'NUP', field: 'NUP', align: 'left' },
+        { name: 'Fase', label: 'Fase', field: 'Fase', align: 'left' },
+        { name: 'Ativo', label: 'Ativo', field: 'Ativo', align: 'left' },
+        { name: 'TipoRequerimento', label: 'Tipo de Requerimento', field: 'TipoRequerimento', align: 'left' },
         { name: 'Excluir', align: 'right' }
       ],
       pagination: { rowsPerPage: 0 }
