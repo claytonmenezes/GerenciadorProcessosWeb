@@ -35,7 +35,8 @@ export default {
         { name: 'TipoRequerimento', label: 'Tipo de Requerimento', field: 'TipoRequerimento', align: 'left' },
         { name: 'Excluir', align: 'right' }
       ],
-      pagination: { rowsPerPage: 0 }
+      pagination: { rowsPerPage: 0 },
+      methodName: 'ListarAtualizados'
     }
   },
   methods: {
