@@ -15,7 +15,6 @@
             <q-item-section avatar>
               <q-icon :name="menuItem.icone" />
             </q-item-section>
-
             <q-item-section>
               {{ menuItem.label }}
             </q-item-section>
